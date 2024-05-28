@@ -18,6 +18,7 @@ configMap:
   name: redis-stack-configuration
   mountPath: /mnt
   master:
+    requirepass: 5Mm7vJI2R8
     maxMemory: 1000mb
     maxMemoryPolicy: allkeys-lru
     maxClients: 20000
@@ -27,6 +28,7 @@ configMap:
     appendOnly: "yes"
     save: ""
   replicas:
+    requirepass: 5Mm7vJI2R8
     maxMemory: 1000mb
     maxMemoryPolicy: allkeys-lru
     maxClients: 20000
@@ -45,7 +47,7 @@ volumeConf:
 # Actual data
 volumeData:
   name: redis-data
-  request: 1Gi
+  request: 8Gi
   storageClassName: gp2
   mountPath: /var/lib/redis-stack
 

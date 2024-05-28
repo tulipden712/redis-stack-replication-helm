@@ -16,6 +16,7 @@ data:
     dir {{ .Values.configMap.master.dir }}
     appendonly {{ .Values.configMap.master.appendOnly }}
     save {{ .Values.configMap.master.save | default "" | quote }}
+    requirepass {{ .Values.configMap.master.requirepass | default "" | quote }}
   replica.conf: |
     replicaof {{ $name }}-0.{{ $name }}-service.{{ .Values.namespace }}.svc.cluster.local {{ .Values.service.port }}
     maxmemory {{ .Values.configMap.replicas.maxMemory }}
@@ -25,3 +26,4 @@ data:
     dir {{ .Values.configMap.replicas.dir }}
     appendonly {{ .Values.configMap.replicas.appendOnly }}
     save {{ .Values.configMap.replicas.save | default "" | quote }}
+    requirepass {{ .Values.configMap.replicas.requirepass | default "" | quote }}
