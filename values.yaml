@@ -29,6 +29,7 @@ configMap:
     save: ""
   replicas:
     requirepass: 5Mm7vJI2R8
+    masterauth: 5Mm7vJI2R8
     maxMemory: 1000mb
     maxMemoryPolicy: allkeys-lru
     maxClients: 20000

@@ -27,3 +27,4 @@ data:
     appendonly {{ .Values.configMap.replicas.appendOnly }}
     save {{ .Values.configMap.replicas.save | default "" | quote }}
     requirepass {{ .Values.configMap.replicas.requirepass | default "" | quote }}
+    masterauth {{ .Values.configMap.replicas.masterauth | default "" | quote }}
